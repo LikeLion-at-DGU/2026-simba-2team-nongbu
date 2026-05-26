@@ -1,18 +1,41 @@
-!{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>온보딩</title>
-    <link rel="stylesheet" href="{% static 'css/onboarding.css' %}">
+    <title>시작화면</title>
+    <link rel="stylesheet" href="{% static 'css/onboarding/onboarding_start.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
 
 </head>
 
 <body>
-
+    <div class="mobile-wrap">
+        <div class="main">
+            <div class="start-frame">
+                <div class="logo-frame">
+                    <img src="{% static 'images/별조각로고.png' %}">
+                </div>
+                <div class="page-description">
+                    <div class="start-title">
+                        <div class="header">
+                            <p>별조각</p>
+                        </div>
+                        <p class="title-description">흩어진 별조각을 모아, 우리의 별자리를 완성하다</p>
+                    </div>
+                </div>
+                <div class="auth-buttons">
+                    <button class="primary-btn signup-btn">회원가입</button>
+                    <div class="login-btn-frame">
+                        <button class="primary-btn login-btn">로그인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

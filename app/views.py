@@ -16,6 +16,9 @@ def mypage_main(request):
 def onboarding(request):
     return render(request, 'onboarding/onboarding.html')
 
+def onboarding_start(request):
+    return render(request, 'onboarding/onboarding_start.html')
+
 def home_create_room1(request):
     return render(request, 'home/home_create_room1.html')
 

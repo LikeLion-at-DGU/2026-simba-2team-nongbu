@@ -13,5 +13,5 @@ nextButtons.forEach((button) => {
 });
 
 startButton.addEventListener('click', () => {
-    window.location.href = '/login/';
+    window.location.href = '/onboarding/start/';
 })

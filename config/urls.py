@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import onboarding
+from app.views import onboarding_start
 from app.views import home_main
 from app.views import space_main
 from app.views import memory_main
@@ -35,6 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_main, name='home_main'),
     path('onboarding/',onboarding, name='onboarding'),
+    path('onboarding/start/', onboarding_start, name='onboarding_start'),
     path('space/', space_main, name='space_main'),
     path('memory/', memory_main, name='memory_main'),
     path('mypage/', mypage_main, name='mypage_main'),
