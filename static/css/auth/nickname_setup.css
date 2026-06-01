@@ -66,5 +66,11 @@
 }
 
 .next-btn {
+    display: flex;
     width: 155px;
+    height: 39px;
+    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

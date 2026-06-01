@@ -19,15 +19,6 @@ def onboarding(request):
 def onboarding_start(request):
     return render(request, 'onboarding/onboarding_start.html')
 
-def home_create_room1(request):
-    return render(request, 'home/home_create_room1.html')
-
-def home_create_room2(request):
-    return render(request, 'home/home_create_room2.html')
-
-def home_join_room(request):
-    return render(request, 'home/home_join_room.html')
-
 def login(request):
     return render(request, 'auth/login.html')
 
@@ -55,3 +46,15 @@ def login(request):
         return render(request, 'auth/login.html', {
             'login_error': '아이디 또는 비밀번호가 올바르지 않습니다.'
         })
+
+def home_create_room1(request):
+    return render(request, 'home/home_create_room1.html')
+
+def home_create_room2(request):
+    return render(request, 'home/home_create_room2.html')
+
+def home_create_room3(request):
+    return render(request, 'home/home_create_room3.html')
+
+def home_join_room(request):
+    return render(request, 'home/home_join_room.html')

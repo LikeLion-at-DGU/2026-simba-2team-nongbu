@@ -24,6 +24,7 @@ from app.views import memory_main
 from app.views import mypage_main
 from app.views import home_create_room1
 from app.views import home_create_room2
+from app.views import home_create_room3
 from app.views import home_join_room
 from app.views import login
 from app.views import signup
@@ -42,7 +43,10 @@ urlpatterns = [
     path('mypage/', mypage_main, name='mypage_main'),
     path('home/create-room/1/', home_create_room1, name='home_create_room1'),
     path('home/create-room/2/', home_create_room2, name='home_create_room2'),
+    path('home/create-room/3/', home_create_room3, name='home_create_room3'),
     path('home/join-room/', home_join_room, name='home_join_room'),
     path('accounts/', include('accounts.urls')),
-
+    path('auth/login/', login, name='login'),
+    path('auth/signup/', signup, name='signup'),
+    path('auth/nickname_setup/', nickname_setup, name='nickname_setup'),
 ]

@@ -6,8 +6,9 @@ home_참여하기
 {% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/home/home_create_room2.css' %}">
+<link rel="stylesheet" href="{% static 'css/home/home_join_room.css' %}">
 <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +17,25 @@ home_참여하기
 <div class="frame-1">
       <div class="elements-1">
             <div class="elements-2">
-                  
+                  <div class="elements-3">
+                        <div class="top-bar">
+                              <a href="{% url 'home_create_room3' %}" class="back-button">
+                                    <img src="{% static 'images/chevron-backward.svg' %}">
+                              </a>
+                              <p class="top-bar-title">우주 생성하기</p>
+                        </div>
+                        <form method="POST">
+                              {% csrf_token %}
+                              <div class="join-space">
+                                    <div class="input-group">
+                                          <p class="input-label">우주 참여하기</p>
+                                          <input class="input-field" name="invite_code" placeholder="받은 코드 또는 링크를 입력하세요">
+                                    </div>
+                                    <p class="input-description">친구한테 코드 또는 링크를 받으세요</p>
+                              </div>
+                              <button type="submit" class="primary-btn next-btn">다음</button>
+                        </form>
+                  </div>
             </div>
       </div>
 

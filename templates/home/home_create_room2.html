@@ -8,6 +8,7 @@ home_방 생성2
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home/home_create_room2.css' %}">
 <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +17,48 @@ home_방 생성2
 <div class="frame-1">
       <div class="elements-1">
             <div class="elements-2">
-                  
+                  <div class="top-bar">
+                        <a href="{% url 'home_create_room1' %}" class="back-button">
+                              <img src="{% static 'images/chevron-backward.svg' %}">
+                        </a>
+                        <p class="top-bar-title">
+                              우주 생성하기
+                        </p>
+                  </div>
+                  <div class="elements-3">
+                        <form method="POST" action="{% url 'home_create_room3' %}">
+                              {% csrf_token %}
+                              <div class="elements-4">
+                                    <div class="operation-period">
+                                          <div class="input-group">
+                                                <p class="input-label">운영 기간 설정 (30~365)</p>
+                                                <input class="input-field" name="operation_period" placeholder="ex.100">
+                                          </div>
+                                          <p class="input-description">최소 30일 ~ 최대 1년까지 설정 가능합니다</p>
+                                    </div>
+                                    <div class="member-setting">
+                                          <p class="input-label">인원 설정</p>
+                                          <div class="slider-group">
+                                                <p class="member-count">
+                                                      <span id="memberCount">1</span>명
+                                                </p>
+                                                <input type="range" min="1" max="12" value="1" 
+                                                      class="member-slider" id="memberSlider" name="member_count">
+                                                <p class="slider-description">최소 1명 ~ 최대 12명까지 가능합니다</p>
+                                          </div>
+                                    </div>
+                                    <div class="privacy-setting">
+                                          <div class="open-space">
+                                                <label class="input-label" for="privacyCheck">우주를 공개하시겠습니까?</label>
+                                                <input type="checkbox" name="is_public" 
+                                                      class="privacy-checkbox" id="privacyCheck">
+                                          </div>
+                                          <p>우주 공개를 선택할 경우, 모두가 회원님의 우주를<br>목록에서 확인 및 선택할 수 있게 됩니다</p>
+                                    </div>
+                              </div>
+                              <button type="submit" class="primary-btn next-btn">다음</button>
+                        </form>
+                  </div>
             </div>
       </div>
 
@@ -26,5 +68,5 @@ home_방 생성2
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/페이지js경로.js' %}"></script>
+<script src="{% static 'js/home_create_room2.js' %}"></script>
 {% endblock %}

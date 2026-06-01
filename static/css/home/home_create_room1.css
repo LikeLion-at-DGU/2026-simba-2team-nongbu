@@ -4,14 +4,15 @@
     height: 100%;
     padding-top: 44px;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 87px;
     border-radius: 30px;
     border: 1px solid var(--Foundation-Violet-Normal, #1A1953);
-    background: var#F9F9F9;
+    background:#F9F9F9;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
 .elements-1 {
@@ -28,4 +29,191 @@
     align-items: center;
     gap: 48px;
     align-self: stretch;
+}
+
+.top-bar {
+    display: flex;
+    width: 375px;
+    padding-left: 13px;
+    align-items: center;
+    gap: 112px;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.top-bar-title {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    text-align: center;
+
+    /* 상단바용 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+}
+
+.elements-3 {
+    display: flex;
+    width: 343px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.space-name, .space-keyword {
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.input-label {
+    align-self: stretch;
+    color: var(--Foundation-Violet-Normal, #1A1953);
+
+    /* 소제목용 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.input-field {
+    height: 60px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--Foundation-Violet-Light, #E8E8EE);
+    background:#F9F9F9;
+}
+
+.input-field::placeholder {
+    position: absolute;
+    left: 14px;
+    bottom: 20px;
+    display: flex;
+    width: 184px;
+    height: 20px;
+    padding-right: 61px;
+    align-items: center;
+    color: var(--foundation-violet-light-active, #B8B8CA);
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    /* 기본 텍스트 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+}
+
+.input-description {
+    align-self: stretch;
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+
+.tip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: -7px;
+    align-self: stretch;
+}
+
+.tip-title-frame {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tip-icon {
+    display: flex;
+    width: 43px;
+    height: 22px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    background: var(--Foundation-Violet-Normal, #1A1953);
+}
+
+.tip-icon p {
+        align-self: stretch;
+        color:#F9F9F9;
+        text-align: center;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: Inter;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px; /* 307.692% */
+}
+
+.tip-title {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px; /* 363.636% */
+}
+
+.exemple {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px; /* 363.636% */
+}
+
+.exemple::before {
+    content: "•";
+    margin-right: 6px;
+}
+
+.bold {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.next-btn {
+    display: flex;
+    width: 155px;
+    height: 39px;
+    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

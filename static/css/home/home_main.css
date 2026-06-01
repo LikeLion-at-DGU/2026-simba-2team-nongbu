@@ -8,6 +8,7 @@
     height: 100%;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
 .elements-1 {
@@ -103,6 +104,10 @@
     flex-direction: row;
     white-space: nowrap;
 
+    border: none;
+    outline: none;
+
+    cursor: pointer;
 }
 
 .enter {
@@ -126,6 +131,11 @@
     text-align: center;
     flex-direction: row;
     white-space: nowrap;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
 }
 
 .list {
@@ -151,7 +161,13 @@
 
     border-radius: 15px;
     background: var(--violet-normal);
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
 }
+
 
 .list button p {
     display: flex;
