@@ -9,7 +9,7 @@
     height: 85px;
 
     border-top: 1px solid var(--Foundation-Violet-Light, #E8E8EE);
-    background: var(--, #F9F9F9);
+    background:#F9F9F9;
     z-index: 1;
 
 }

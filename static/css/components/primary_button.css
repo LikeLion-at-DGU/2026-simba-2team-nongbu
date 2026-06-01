@@ -23,6 +23,7 @@
 
 .primary-btn:hover {
     background: var(--foundation-violet-light-active, #B8B8CA);
+    transition: 0.2s;
 }
 
 .primary-btn:active {
@@ -34,3 +35,5 @@
     background: #E8E8EE;
     color: #C3C3C3;
 }
+
+
