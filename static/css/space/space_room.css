@@ -20,19 +20,32 @@
 }
 
 .top-bar {
-    display: inline-flex;
+    margin-top: 44px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
     align-items: center;
-    gap: 100px;
+    justify-content: space-between;
 }
 
-.back-button {
+.back-button,
+.menu-button {
     border: none;
     background: transparent;
     padding: 0;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .top-bar-title {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
     color: var(--Foundation-Violet-Normal, #1A1953);
     text-align: center;
 
@@ -44,10 +57,50 @@
     line-height: 24px; /* 150% */
 }
 
+.menu-button {
+    justify-content: flex-end;
+}
+
+.fab-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.60);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 10;
+}
+
+.fab-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 .fab-container {
-    position: fixed;
-    right: 20px;
-    bottom: 100px;
+    position: absolute;
+
+    right: 25px;
+    bottom: 45px;
+
+    z-index: 20;
+}
+
+.main-btn,
+.sub-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 버튼 + 텍스트 묶음 */
@@ -80,13 +133,21 @@
 }
 
 .fab-container.active .upload-item {
-    transform: translateY(-90px);
+    transform: translateY(-73px);
     opacity: 1;
     pointer-events: auto;
 }
 
 .fab-container.active .camera-item {
-    transform: translateY(-180px);
+    transform: translateY(-146px);
     opacity: 1;
     pointer-events: auto;
+}
+
+.main-btn {
+    transition: transform 0.3s ease;
+}
+
+.fab-container.active .main-btn {
+    transform: rotate(45deg);
 }

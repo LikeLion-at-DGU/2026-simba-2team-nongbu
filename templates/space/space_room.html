@@ -8,6 +8,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/space/space_room.css' %}">
 <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/space_menu.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,13 +17,14 @@
 <div class="space-room space-detail">
     <div class="top-bar">
         <a href="{% url 'space_main' %}" class="back-button">
-            <img src="{% static 'images/chevron-backward.svg' %}">
+            <img src="{% static 'images/chevron-backward-white.svg' %}">
         </a>
         <p class="top-bar-title">{{ space.name }}</p>
         <button class="menu-button" id="menuBtn">
             <img src="{% static 'images/ant-design_more-outlined.svg' %}">
         </button>
     </div>
+    <div class="fab-overlay" id="fabOverlay"></div>
     <div class="fab-container">
         <div class="fab-item camera-item">
             <span class="fab-label">촬영</span>
@@ -40,11 +42,12 @@
             <img src="{% static 'images/flowbite_circle-plus-solid.svg' %}">
         </button>
     </div>
+    {% include 'components/space_menu.html' %}
 </div>
 
 {% endblock %}
 
 
 {% block extra_js %}
-<script src="{% static 'js/페이지js경로.js' %}"></script>
+<script src="{% static 'js/space_room.js' %}"></script>
 {% endblock %}

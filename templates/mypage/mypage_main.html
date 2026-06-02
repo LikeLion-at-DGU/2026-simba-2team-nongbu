@@ -13,10 +13,13 @@
 {% block content %}
 
 <!-- 페이지 내용: 여기부터 코딩하면됨!! main 클래스명 x -->
+<div class="mypage-main">
+    <div class="elements-1">
+        
+    </div>
+    {% include 'components/navbar.html' with active_nav='mypage' %}
+</div>
 
-
-
-{% include 'components/navbar.html' with active_nav='mypage' %}
 {% endblock %}
 
 {% block extra_js %}

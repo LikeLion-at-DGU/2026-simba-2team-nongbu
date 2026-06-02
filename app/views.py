@@ -39,3 +39,6 @@ def space_main(request):
 
 def space_room(request):
     return render(request, 'space/space_room.html')
+
+def space_upload(request):
+    return render(request, 'space/space_upload.html')

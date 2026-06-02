@@ -1,0 +1,24 @@
+.memory-main {
+    display: flex;
+    width: 375px;
+    padding: 32px 0 2px 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    border-radius: 30px;
+    border: 1px solid var(--Foundation-Violet-Normal, #1A1953);
+    background: #F9F9F9;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.elements-1 {
+    display: flex;
+    width: 375px;
+    flex-direction: column;
+    align-items: center;
+}
