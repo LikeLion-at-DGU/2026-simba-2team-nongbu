@@ -3,7 +3,7 @@ from spaces.models import Space
 from django.contrib.auth.models import User
 
 class Star(models.Model):
-    star = models.BigAutoField(primary_key=True)
+    star_id = models.BigAutoField(primary_key=True)
     space = models.ForeignKey(Space, on_delete=models.CASCADE, related_name='stars')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='stars')
     content = models.TextField(null=True)

@@ -3,7 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
 
 class Space(models.Model):
-    space_id = models.AutoField(primary_key=True)
+    space_id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=15)
     keyword = models.CharField(max_length=15, blank=True)
     max_capacity = models.IntegerField(validators=[MaxValueValidator(12)])
