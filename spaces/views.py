@@ -1,10 +1,21 @@
 import uuid
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from django.db.models import Q
 
 def home_main(request):
+    search = request.GET.get('search', '')
+
     spaces = Space.objects.filter(is_public=True).order_by('-created_at') # 공개 된 우주만 최신 순으로 가져오기
-    return render(request, 'home/home_main.html', {'spaces':spaces})
+
+    if search:
+        spaces = spaces.filter(
+            Q(name__icontains=search) | Q(keyword__icontains=search)
+        )
+    return render(request, 'home/home_main.html', {
+        'spaces': spaces, 
+        'search': search
+    })
 
 def space_create_step1(request):
     if request.method == 'POST':

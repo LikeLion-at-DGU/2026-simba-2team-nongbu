@@ -19,10 +19,12 @@ home_메인
         <div class="elements-2">
             <div class="head">
                 <div class="view">
-                    <div class="searchbar">
-                        <img src="{% static 'images/search.svg' %}" alt="검색아이콘">
-                        <input type="text" name="room-name" id="room-name" placeholder="원하는 방을 입력하세요. (ex. 팀플)">
-                    </div>
+                    <form class="searchbar" method="GET" action="">
+                        <img src="{% static 'images/search.svg' %}" alt="검색아이콘" onclick="this.parentNode.submit()"
+                            style="cursor: pointer;">
+                        <input type="text" name="search" id="room-name" value="{{ search }}"
+                            placeholder="원하는 방을 입력하세요. (ex. 팀플)">
+                    </form>
                 </div>
                 <div class="space_btn">
                     <button class="create" onclick='location.href="{% url "spaces:home_create_room1" %}"'>우주
