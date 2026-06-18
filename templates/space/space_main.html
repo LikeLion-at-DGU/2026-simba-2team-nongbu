@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block title %}
-페이지이름
+내 우주 둘러보기
 {% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/space/space_main.css' %}">
 <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -28,8 +29,26 @@
                               </button>
                         </a>
                         {% empty %}
-                        <div class="empty-state" style="text-align: center; padding: 50px 0; color: #888;">
-                              <p>새로운 우주를 만들거나 초대 코드로 참여해 보세요!</p>
+                        <div class="empty-state">
+
+                              <div class="empty-top"></div>
+
+                              <div class="empty-content">
+                                    <p class="empty-state-title">
+                                          우주가 텅 비었어요!
+                                    </p>
+
+                                    <p class="empty-state-description">
+                                          직접 우주를 만들거나<br>친구의 우주에 참여해 보세요 :)
+                                    </p>
+                              </div>
+
+                              <a href="{% url 'home_main' %}">
+                                    <button class="primary-btn back-button">
+                                          홈으로 돌아가기
+                                    </button>
+                              </a>
+
                         </div>
                         {% endfor %}
                   </div>

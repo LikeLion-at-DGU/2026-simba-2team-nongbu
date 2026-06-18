@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+home_참여하기
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home/home_room_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- 페이지 내용: 여기부터 코딩하면됨!! main 클래스명 x -->
+<div class="home-main">
+    <div class="frame-1">
+        <div class="top-bar">
+                <a href="{% url 'home_main' %}" class="back-button">
+                    <img src="{% static 'images/chevron-backward.svg' %}">
+                </a>
+                <p class="top-bar-title">방 정보 확인하기</p>
+        </div>
+        <div class="space-detail"></div>
+        <div class="frame-2">
+            <div class="frame-3">
+                <p class="room-title">{{ space.name }}</p>
+            </div>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <p class="detail-title">키워드</p>
+                    <p class="detail-description">{{ space.keyword }}</p>
+                </div>
+                <div class="info-item">
+                    <p class="detail-title">운영 기간</p>
+                    <p class="detail-description">{{ space.duration_days }}일</p>
+                </div>
+                <div class="info-item">
+                    <p class="detail-title">인원</p>
+                    <p class="detail-description member-count">{{ current_members }}/{{ space.max_capacity }}</p>
+                </div>
+                <div class="info-item">
+                    <p class="detail-title">기록 주기</p>
+                    <p class="detail-description">{{ space.record_cycle }}</p>
+                </div>
+                <div class="info-item">
+                    <p class="detail-title">횟수제한</p>
+                    <p class="detail-description">{{ space.record_limit }}</p>
+                </div>
+            </div>
+
+            <button class="primary-btn joinin-btn">참여하기</button>
+
+        </div>
+    </div>
+    
+
+      {% include 'components/navbar.html' with active_nav='home' %}
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/페이지js경로.js' %}"></script>
+{% endblock %}

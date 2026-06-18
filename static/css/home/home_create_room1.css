@@ -67,7 +67,7 @@
 
 .elements-3 {
     display: flex;
-    width: 343px;
+    width: 323px;    
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;

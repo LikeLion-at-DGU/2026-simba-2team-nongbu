@@ -27,22 +27,33 @@ home_메인
                     </form>
                 </div>
                 <div class="space_btn">
-                    <button class="create" onclick='location.href="{% url "spaces:home_create_room1" %}"'>우주
-                        만들기</button>
-                    <button class="enter" onclick='location.href="{% url "spaces:join_space" %}"'>우주 참여하기</button>
+                    <a href="{% url 'spaces:home_create_room1' %}">
+                        <button class="create">우주 만들기</button>
+                    </a>
+                    <button class="enter" onclick="location.href='{% url 'spaces:join_space' %}'">우주 참여하기</button>
                 </div>
             </div>
 
             <div class="list">
                 {% if spaces %}
-                {% for space in spaces %}
-                <button>
-                    <p class="space-title">{{ space.name }}</p>
-                    <img src="{% static 'images/Arrow.svg' %}" alt="이동">
-                </button>
-                {% endfor %}
+                    {% for space in spaces %}
+                    <a href="{% url 'spaces:home_room_detail' space.space_id %}">
+                        <button>
+                            <p class="space-title">{{ space.name }}</p>
+                            <img src="{% static 'images/Arrow.svg' %}" alt="이동">
+                        </button>
+                    </a>
+                    {% endfor %}
                 {% else %}
-                <p class="no-space">아직 만들어진 우주가 없습니다.</p>
+                    {% if search %}
+                    <div class="empty-search">
+                        <img src="{% static 'images/si_warning-line.svg' %}" alt="검색결과없음">
+                        <p>검색 결과가 없습니다.</p>
+                    </div>
+
+                    {% else %}
+                    <p class="no-space">아직 만들어진 우주가 없습니다.</p>
+                    {% endif %}
                 {% endif %}
             </div>
 

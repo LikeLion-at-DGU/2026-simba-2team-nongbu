@@ -12,4 +12,5 @@ urlpatterns = [
     path('join/', join_space, name='join_space'),
     path('room/<int:space_id>/', space_room, name='space_room'),
     path('room/<int:space_id>/star/', include('stars.urls')),
+    path('detail/<int:space_id>/', home_room_detail, name='home_room_detail'),
 ]
