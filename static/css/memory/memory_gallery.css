@@ -1,0 +1,134 @@
+.gallery-main {
+    border-radius: 30px;
+    border: 1px solid var(--Foundation-Violet-Normal, #1A1953);
+    background: #F9F9F9;
+    padding-top: 44px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.elements-1 {
+    display: flex;
+    width: 375px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    display: flex;
+    width: 375px;
+    padding-left: 13px;
+    align-items: center;
+    gap: 112px;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.top-bar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.gallery-content {
+    display: flex;
+    height: 626px;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+    align-self: stretch;
+}
+
+.gallery-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.gallery-date p {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    /* 소제목부연설명용/숫자 */
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+
+.gallery-list {
+    display: grid;
+    grid-template-columns: repeat(2, 167px);
+    gap: 10px;
+
+    height: 583px;
+    overflow-y: auto;
+
+    align-content: start;
+}
+
+.gallery-card {
+    display: flex;
+    width: 167px;
+    height: 252px;
+    padding: 10px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 15px;
+    border: 1px solid var(--Foundation-Violet-Normal, #1A1953);
+    background: var(--, #F9F9F9);
+}
+
+.nickname {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+
+    /* 소제목용 */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.gallery-image {
+    width: 147px;
+    height: 147px;
+
+    border-radius: 16px;
+    border: 1px solid var(--Foundation-Violet-Normal, #1A1953);
+    object-fit: cover;
+}
+
+.content {
+    color: var(--Foundation-Violet-Normal, #1A1953);
+    font-feature-settings: 'liga' off, 'clig' off;
+
+    /* 갤러리 글자용 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
+}

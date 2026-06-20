@@ -58,3 +58,5 @@ def memory_calendar(request):
         result.append(week_list)
 
 
+def memory_gallery(request):
+    return render(request, 'memory/memory_gallery.html')

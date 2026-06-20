@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-페이지이름
+추억_갤러리 확인
 {% endblock %}
 
 {% block extra_css %}
@@ -13,8 +13,37 @@
 {% block content %}
 
 <!-- 페이지 내용: 여기부터 코딩하면됨!! main 클래스명 x -->
+<div class="gallery-main">
+    <div class="elements-1">
+        <div class="top-bar">
+            <a href="javascript:history.back()" class="back-button">
+                <img src="{% static 'images/chevron-backward.svg' %}">
+            </a>
+            <p class="top-bar-title">{{ space.name }}별자리</p>
+        </div>
+        <div class="gallery-content">
 
-{% include 'components/navbar.html' with active_nav='memory' %}
+            <div class="gallery-date">
+                <p>{{ selected_date }}</p>
+            </div>
+
+            <div class="gallery-list">
+
+                {% for memory in memories %}
+                <div class="gallery-card">
+                    <p class="nickname">{{ memory.user.nickname }}</p>
+                    <img src="{{ memory.image.url }}" class="gallery-image">
+                    <p class="content">{{ memory.content }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+    {% include 'components/navbar.html' with active_nav='memory' %}
+ </div>
 
 {% endblock %}
 
