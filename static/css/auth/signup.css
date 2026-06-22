@@ -136,22 +136,9 @@
 }
 
 .check-btn {
-    display: flex;
     width: 100px;
     height: 56px;
-    padding: 16px 20px;
-    border-radius: 80px;
-    background: #B8B8CA;
-    justify-content: center;
-    align-items: center;
-
-    color: #FFF;
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-
-    border: none;
+    border-radius: 80px !important;
     cursor: pointer;
 }
 
@@ -174,26 +161,17 @@
 }
 
 .primary-button {
-    display: flex;
     width: 344px;
     height: 56px;
-    padding: 14px 28px;
-    border-radius: 20px;
-    background: #1A1953;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    border: none;
+    padding: 14px 28px !important;
+    border-radius: 20px !important;
     cursor: pointer;
 }
 
 .primary-button p {
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 150%;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
 }
 
 .primary-button img {

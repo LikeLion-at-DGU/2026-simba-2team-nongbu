@@ -127,25 +127,17 @@
 }
 
 .login-btn {
-    display: flex;
     width: 344px;
     height: 56px;
-    padding: 14px 28px;
-    border-radius: 20px;
-    background: #1A1953;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: none;
+    padding: 14px 28px !important;
+    border-radius: 20px !important;
     cursor: pointer;
 }
 
 .login-btn p {
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 150%;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
 }
 
 .login-btn img {

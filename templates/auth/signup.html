@@ -7,6 +7,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/auth/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -28,7 +29,7 @@
                                           <div class="input-id">
                                                 <input id="signup-username" type="text" name="username"
                                                       placeholder="아이디" value="{{ username|default:'' }}">
-                                                <button class="check-btn" name="check_action" value="check_username"
+                                                <button class="primary-btn check-btn" name="check_action" value="check_username"
                                                       type="submit">중복확인</button>
                                           </div>
                                     </div>
@@ -66,7 +67,7 @@
                               </div>
                         </div>
 
-                        <button type="submit" class="primary-button" name="check_action" value="signup">
+                        <button type="submit" class="primary-btn  primary-button" name="check_action" value="signup">
                               <p>회원가입 완료</p>
                               <img src="{% static 'images/ArrowRight.svg' %}">
                         </button>

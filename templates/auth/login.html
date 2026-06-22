@@ -7,6 +7,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/auth/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -43,7 +44,7 @@
                     {% endif %}
                 </div>
             </div>
-            <button type="submit" class="login-btn">
+            <button type="submit" class="primary-btn login-btn">
                 <p>로그인</p>
                 <img src="{% static 'images/ArrowRight.svg' %}">
             </button>
