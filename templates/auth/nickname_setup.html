@@ -19,9 +19,11 @@
                   <p>이제,<br>별조각을 심을 준비가<br>되셨나요?</p>
                   {% csrf_token %}
                   <input id="nickname" type="text" name="nickname" placeholder="닉네임을 입력하세요.">
+                  <label for="nickname">
                   {% if error %}
-                  <label for="nickname">{{error}}</label>
+                  {{error}}
                   {% endif %}
+                  </label>
             </div>
             <button class="primary-btn next-btn">다음</button>
       </form>

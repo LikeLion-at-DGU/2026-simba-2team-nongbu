@@ -13,6 +13,9 @@ def memory_main(request):
 def memory_list(request):
     return render(request, 'memory/memory_gallery_list.html')
 
+def memory_constellation(request):
+    return render(request, 'memory/memory_constellation.html')
+
 def mypage_main(request):
     return render(request, 'mypage/mypage_main.html')
 

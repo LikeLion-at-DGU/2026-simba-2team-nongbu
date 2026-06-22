@@ -59,6 +59,7 @@
 
 .form-box label {
     color: #F00;
+    min-height: 24px;
     font-family: Inter;
     font-size: 12px;
     font-weight: 300;

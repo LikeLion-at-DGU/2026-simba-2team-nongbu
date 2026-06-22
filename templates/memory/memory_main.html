@@ -8,6 +8,7 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/memory/memory_main.css' %}">
 <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/primary_button.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -29,7 +30,27 @@
                <span>{{ space.duration_days }}일 운영</span>
             </a>
             {% empty %}
-            <p>아직 추억으로 변한 우주방이 없습니다!</p>
+            <div class="empty-state">
+
+               <div class="empty-top"></div>
+
+               <div class="empty-content">
+                     <p class="empty-state-title">
+                           추억이 텅 비었어요!
+                     </p>
+
+                     <p class="empty-state-description">
+                           친구와 별자리를 만들면<br>추억을 만들 수 있어요 :)
+                     </p>
+               </div>
+
+               <a href="{% url 'spaces:space_main' %}">
+                     <button class="primary-btn back-button">
+                           우주로 돌아가기
+                     </button>
+               </a>
+
+            </div>
             {% endfor %}
          </div>
       </div>
