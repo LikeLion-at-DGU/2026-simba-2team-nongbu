@@ -88,6 +88,11 @@ def nickname_setup(request):
         # 닉네임 가져오기
         nickname = request.POST.get('nickname').strip()
 
+        print("===== 닉네임 설정 =====")
+        print("입력한 닉네임:", nickname)
+        print("현재 유저:", request.user)
+        print("=====================")
+
         # 닉네임 입력 여부 검사
         if not nickname:
             return render(request, 'auth/nickname_setup.html', {'error': '닉네임을 입력해주세요'})
@@ -101,6 +106,7 @@ def nickname_setup(request):
         profile = Profile.objects.get(user=request.user)
         profile.nickname = nickname
         profile.save()
+        print("저장 후 닉네임:", profile.nickname)
         return redirect('home_main')
 
     return render(request, 'auth/nickname_setup.html')
