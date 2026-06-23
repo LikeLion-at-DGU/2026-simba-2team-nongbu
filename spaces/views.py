@@ -29,15 +29,6 @@ def home_main(request):
         if timezone.now() < end_date and current_members < space.max_capacity:
             active_spaces.append(space)
 
-    # 테스트코드 ==============================
-    print("\n" + "="*40)
-    print(f"현재 로그인한 유저: {request.user}")
-    print(f"현재 동작하는 우주 개수: {len(active_spaces)}개")
-    for space in active_spaces:
-        print(f"방 이름: {space.name}")
-    print("="*40 + "\n")
-    # 테스트코드 ==============================
-
     return render(request, 'home/home_main.html', {
         'spaces': active_spaces, 
         'search': search
@@ -209,14 +200,6 @@ def space_main(request):
         
         if timezone.now() < end_date:
             active_spaces.append(space)
-    # 테스트코드 ==============================
-    print("\n" + "="*40)
-    print(f"현재 로그인한 유저: {request.user}")
-    print(f"현재 동작하는 우주 개수: {len(active_spaces)}개")
-    for space in active_spaces:
-        print(f"방 이름: {space.name}")
-    print("="*40 + "\n")
-    # 테스트코드 ==============================
 
     return render(request, 'space/space_main.html', {'spaces': active_spaces})
 
