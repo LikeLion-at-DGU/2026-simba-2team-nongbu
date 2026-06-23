@@ -18,16 +18,6 @@ def memory_main(request):
         if timezone.now() >= end_date:
             memories.append(space)
 
-    # 테스트코드 ==============================
-    print("\n" + "="*40)
-    print(f"현재 로그인한 유저: {request.user}")
-    print(f"추억에 담긴 우주 개수: {len(memories)}개")
-    
-    for memory in memories:
-        print(f"방 이름: {memory.name}")
-    print("="*40 + "\n")
-    # 테스트코드 ==============================
-
     return render(request, 'memory/memory_main.html', {'memories': memories})
 
 def memory_gallery_list(request, space_id):
