@@ -14,7 +14,7 @@ def create(request, space_id):
         if space.record_limit == 'once':
             today = timezone.localdate()
 
-            already_uploaded_today = Star.object.filter(
+            already_uploaded_today = Star.objects.filter(
                 space=space,
                 user=request.user,
                 created_at__date=today
