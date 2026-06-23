@@ -1,10 +1,5 @@
-const recordChips = document.querySelectorAll(
-    '.record-cycle-setting .chip'
-);
-
-const recordInput = document.getElementById(
-    'recordCycle'
-);
+const recordChips = document.querySelectorAll('.record-cycle-setting .chip');
+const recordInput = document.getElementById('recordCycle');
 
 recordChips.forEach((chip) => {
 
@@ -28,13 +23,8 @@ recordChips.forEach((chip) => {
 
 });
 
-const limitChips = document.querySelectorAll(
-    '.limit-chip'
-);
-
-const limitInput = document.getElementById(
-    'recordLimit'
-);
+const limitChips = document.querySelectorAll('.limit-chip');
+const limitInput = document.getElementById('recordLimit');
 
 limitChips.forEach((chip) => {
 
