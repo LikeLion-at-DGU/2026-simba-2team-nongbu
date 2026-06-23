@@ -220,6 +220,40 @@ def space_main(request):
 
     return render(request, 'space/space_main.html', {'spaces': active_spaces})
 
+def get_daily_break_points(space):
+    if space.record_cycle != 'daily':
+        return []
+    
+    member_count = space.members.count()
+    if member_count == 0:
+        return []
+    
+    today = timezone.localdate()
+    check_date = timezone.localtime(space.created_at).date()
+
+    break_points = []
+
+    while check_date < today:
+        uploaded_user_count = (
+            space.stars
+            .filter(created_at__date=check_date)
+            .values('user')
+            .distinct()
+            .count()
+        )
+
+        if uploaded_user_count * 2 < member_count:
+            stars_before_day = (
+                space.stars
+                .filter(created_at__date__lt=check_date)
+                .count()
+            )
+
+            if stars_before_day > 0:
+                break_points.append(stars_before_day)
+
+        check_date += timedelta(days=1)
+    return break_points
 
 def space_room(request, space_id):
     if not request.user.is_authenticated:
@@ -228,7 +262,8 @@ def space_room(request, space_id):
     space = get_object_or_404(Space, pk=space_id)
     
     # DB에 저장된 실제 사진(별)의 총 개수만 카운트합니다!
-    total_memory_count = space.stars.count() 
+    total_memory_count = space.stars.count()
+    break_points = get_daily_break_points(space)
     
     remain = total_memory_count
     render_constellations = []
@@ -239,14 +274,33 @@ def space_room(request, space_id):
         required = constellation["required"]
         current = min(remain, required)
 
+        constellation_start_index = total_memory_count - remain
+        filtered_lines = []
+
+        for line in constellation["lines"]:
+            start_index = constellation_start_index + line[0]
+            end_index = constellation_start_index + line[1]
+
+            is_broken = False
+
+            for break_point in break_points:
+                if min(start_index, end_index) < break_point <= max(start_index, end_index):
+                    is_broken = True
+                    break
+
+            if not is_broken:
+                filtered_lines.append(line)
+        constellation_data = constellation.copy()
+        constellation_data["lines"] = filtered_lines
+
         render_constellations.append({
             "name": name,
             "current": current,
             "required": required,
-            "data": constellation,
+            "data": constellation_data,
         })
 
-        remain -= required
+        remain -= current
         if remain <= 0:
             break
 
