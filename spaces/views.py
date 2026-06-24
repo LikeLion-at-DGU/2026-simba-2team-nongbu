@@ -192,7 +192,7 @@ def home_room_detail(request, space_id):
     })
 
 def space_main(request):
-    my_spaces = Space.objects.filter(members__user=request.user)
+    my_spaces = Space.objects.filter(members__user=request.user).order_by('-created_at')
     active_spaces = []
 
     for space in my_spaces:
