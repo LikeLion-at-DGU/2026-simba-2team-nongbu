@@ -4,6 +4,7 @@ from django.utils import timezone
 from datetime import timedelta
 import calendar
 from spaces.constellation import CONSTELLATION_ORDER, CONSTELLATIONS
+from spaces.views import get_daily_break_points
 
 def memory_main(request):
     if not request.user.is_authenticated:
@@ -105,6 +106,7 @@ def memory_constellation(request, space_id):
 
 
     total_memory_count = stars.count()
+    break_points = get_daily_break_points(space)
     remain = total_memory_count
     render_constellations = []
 
@@ -114,16 +116,37 @@ def memory_constellation(request, space_id):
 
         current = min(remain, required)
 
+        constellation_start_index = total_memory_count - remain
+
+        filtered_lines = []
+
+        for line in constellation["lines"]:
+            start_index = constellation_start_index + line[0]
+            end_index = constellation_start_index + line[1]
+
+            is_broken = False
+
+            for break_point in break_points:
+                if min(start_index, end_index) < break_point <= max(start_index, end_index):
+                    is_broken = True
+                    break
+
+            if not is_broken:
+                filtered_lines.append(line)
+
+        constellation_data = constellation.copy()
+        constellation_data["lines"] = filtered_lines
+
         render_constellations.append({
             "name": name,
             "current": current,
             "required": required,
-            "data": constellation,
+            "data": constellation_data,
             "start_date": space.created_at.strftime("%y.%m.%d"),
             "end_date": end_datetime.strftime("%y.%m.%d"),
         })
 
-        remain -= required
+        remain -= current
 
         if remain <= 0:
             break
